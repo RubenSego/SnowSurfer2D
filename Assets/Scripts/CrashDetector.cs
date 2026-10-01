@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class CrashDetector : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         int layerIndex = LayerMask.NameToLayer("Floor");
 
