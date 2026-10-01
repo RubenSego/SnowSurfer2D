@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     void PlayerTorque()
     {
         moveInput = moveAction.ReadValue<Vector2>();
-        Debug.Log($"Move Input: {moveInput}");
         if (moveInput.x < 0)
         {
             rb.AddTorque(torqueAmount);
