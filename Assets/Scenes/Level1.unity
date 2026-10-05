@@ -333,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 288473589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.63, y: -4.71, z: 0}
+  m_LocalPosition: {x: -18.91, y: 1.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   torqueAmount: 26
-  boostSpeed: 20
+  boostSpeed: 25
   snowEffect: {fileID: 963321795}
 --- !u!58 &288473594
 CircleCollider2D:
@@ -787,7 +787,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.63, y: -1.1000001, z: -15.05}
+  m_LocalPosition: {x: -27.91, y: 5.35, z: -15.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1057,7 +1057,7 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 15
+  m_Speed: 25
   m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
@@ -2001,7 +2001,7 @@ Transform:
   m_GameObject: {fileID: 899878927}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.63, y: -1.1000001, z: -15.05}
+  m_LocalPosition: {x: -27.91, y: 5.35, z: -15.05}
   m_LocalScale: {x: 0.087497, y: 1.0765625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

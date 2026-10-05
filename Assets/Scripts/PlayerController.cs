@@ -6,11 +6,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float torqueAmount = 1f;
     [SerializeField] private float boostSpeed = 30f;
     [SerializeField] private ParticleSystem snowEffect;
+    
+    float baseSpeed;
+    
     InputAction moveAction;
     Vector2 moveInput;
     Rigidbody2D rb;
     SurfaceEffector2D se;
-    float baseSpeed;
+
+    private bool canControlPlayer = true; // Flag to control player input.
+    public bool CanControlPlayer { get => canControlPlayer; set => canControlPlayer = value; }
+
     void Start()
     {
         moveAction = InputSystem.actions.FindAction("Move");
@@ -21,8 +27,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerTorque();
-        BoostPlayer();
+        if(!canControlPlayer) return;
+        if (CanControlPlayer)
+        {
+            PlayerTorque();
+            BoostPlayer();
+        }
     }
     /// <summary>
     /// Applies torque to the player based on input from the Move action.
