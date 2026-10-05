@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float torqueAmount = 1f;
     [SerializeField] private float boostSpeed = 30f;
     [SerializeField] private ParticleSystem snowEffect;
+    [SerializeField] private ScoreManager scoreManager; //Reference to the ScoreManager script to update the score.
 
     SurfaceEffector2D se;
     Rigidbody2D rb;
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
         if (Math.Abs(totalRotation) > 340)
         {
             flipCount++;
-            Debug.Log($"Flips: {flipCount}"); //Log the number of flips to the console.
+            scoreManager.AddScore(flipCount*100); // Update the score in the ScoreManager script.
             totalRotation = 0; // Reset the total rotation after a flip is counted.
         }
         previousRotation = currentRotation; // Update the previous rotation for the next frame.
