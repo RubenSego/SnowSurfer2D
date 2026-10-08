@@ -11,13 +11,21 @@ public class FinishLine : MonoBehaviour
         {
             Debug.Log("Player has crossed the finish line!");
             finishEffect.Play();
-            Invoke(nameof(ReloadScene), reloadDelay); // Reload the scene after 1 second delay
+            
+            Invoke(nameof(NextLevel), reloadDelay); // Reload the scene after 1 second delay
             //TO DO: You can add additional logic here, such as triggering a win condition or loading a new scene.
         }
     }
-    void ReloadScene()
+    void NextLevel()
     {
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel+1); //Unlock the next level
+        PlayerPrefs.Save();
         // Reload the current scene.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (unlockedLevel > 4)
+        {
+            SceneManager.LoadScene($"Menu"); //TODO: Go to Win Scene.
+        }
+        else SceneManager.LoadScene($"Level{unlockedLevel+1}"); //Load the next level.
     } 
 }
